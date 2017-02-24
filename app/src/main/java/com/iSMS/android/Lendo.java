@@ -28,10 +28,15 @@ public class Lendo extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lendo);
+
 
 
         Bundle extras = getIntent().getExtras();
+        String titulo1 = extras.getString("TITULO");
+        Log.d(TAG, "SAIDA TITULO 1: " + titulo1);
+        String corpo1 = extras.getString("MESSAGE");
+        Log.d(TAG, "SAIDA MENSAGEM 1: " + corpo1);
+
         //Bundle extras2 = getIntent().getExtras();
         //Toast.makeText(this,"SAIDA TITULO 1: ", Toast.LENGTH_LONG).show();
         // Log.d(TAG,  "SAIDA EXTRAS: " + extras);
@@ -41,10 +46,11 @@ public class Lendo extends Activity {
 
             //if (extras.containsKey("TITULO")) { //&& extras.containsKey("MESSAGE")) {
 
-
+            setContentView(R.layout.activity_lendo);
             String titulo = extras.getString("TITULO");
-            // Log.d(TAG,  "SAIDA TITULO 2: " + titulo);
+            Log.d(TAG, "SAIDA TITULO : " + titulo);
             String corpo = extras.getString("MESSAGE");
+            Log.d(TAG, "SAIDA MENSAGEM : " + corpo);
 
             shtitulo = (TextView) findViewById(R.id.titleid);
             shcorpo = (TextView) findViewById(R.id.bodyid);
@@ -52,8 +58,8 @@ public class Lendo extends Activity {
             shtitulo.setText(titulo);
             shcorpo.setText(corpo);
 
-            // Log.d(TAG,  "SAIDA TITULO 3: " + titulo);
-            // Log.d(TAG,  "SAIDA CORPO 4: " + corpo);
+            Log.d(TAG, "SAIDA TITULO 2: " + titulo);
+            Log.d(TAG, "SAIDA CORPO 2: " + corpo);
 
             //Toast.makeText(this,"SAIDA TITULO 3: ", Toast.LENGTH_LONG).show();
             //}

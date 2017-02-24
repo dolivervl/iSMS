@@ -19,7 +19,7 @@
         android:src="@drawable/firebase_lockup_400" />
 
     <TextView
-        android:text="TextView"
+        android:text="Título aqui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/bodyid"
@@ -29,7 +29,7 @@
         android:id="@+id/titleid" />
 
     <TextView
-        android:text="TextView"
+        android:text="Mensagem aqui"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
