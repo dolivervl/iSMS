@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "437998723447",
+    "firebase_url": "https://isms-fb469.firebaseio.com",
+    "project_id": "isms-fb469",
+    "storage_bucket": "isms-fb469.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437998723447:android:2e16b2efcdda0eae",
+        "android_client_info": {
+          "package_name": "com.iSMS.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437998723447-kqoo4osp965uov3bqm1nc0i84vlj1q89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3WxQwLsY2B35wdhMxRzSHelU871EqOfE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
