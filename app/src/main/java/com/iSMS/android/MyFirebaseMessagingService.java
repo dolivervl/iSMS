@@ -44,17 +44,31 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             //Log.d(TAG, "Message data: " + remoteMessage.getData());
             Log.d(TAG, "Message Titulo:" + remoteMessage.getData().get("title"));
             Log.d(TAG, "Message Texto:" + remoteMessage.getData().get("text"));
+            //Log.d(TAG, "Message Texto2:" + remoteMessage.getData().get("text2"));
             //sendNotification(remoteMessage.getData().get("title"), remoteMessage.getData().get("text"));
             //Lendo.sendTela(remoteMessage.getData().get("title"), remoteMessage.getData().get("text"));
             String title = remoteMessage.getData().get("title");
             String message = remoteMessage.getData().get("text");
             String click_action = remoteMessage.getData().get("click_action");
+            String message2 = remoteMessage.getData().get("NoClas");
+            String message3 = remoteMessage.getData().get("Info");
+            String message4 = remoteMessage.getData().get("Warn");
+            String message5 = remoteMessage.getData().get("Aver");
+            String message6 = remoteMessage.getData().get("High");
+            String message7 = remoteMessage.getData().get("Disas");
 
             Log.d(TAG, title);
             Log.d(TAG, message);
+            Log.d(TAG, message2);
             Intent intent = new Intent(this, Lendo.class);
             intent.putExtra("TITULO", title);
             intent.putExtra("MESSAGE", message);
+            intent.putExtra("MESSAGE2", message2);
+            intent.putExtra("MESSAGE3", message3);
+            intent.putExtra("MESSAGE4", message4);
+            intent.putExtra("MESSAGE5", message5);
+            intent.putExtra("MESSAGE6", message6);
+            intent.putExtra("MESSAGE7", message7);
             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0/*Request Code*/, intent, PendingIntent.FLAG_ONE_SHOT);
             Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
@@ -70,6 +84,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             );
             Log.d(TAG, "MENSAGEM TITULO :" + intent.getStringExtra(title));
             Log.d(TAG, "MENSAGEM CORPO :" + intent.getStringExtra(message));
+            // Log.d(TAG, "MENSAGEM CORPO2 :" + intent.getStringExtra(message2));
 
         }
 

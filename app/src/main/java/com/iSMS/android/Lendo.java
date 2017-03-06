@@ -8,12 +8,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.messaging.RemoteMessage;
-
 import java.util.ArrayList;
+
 
 public class Lendo extends Activity {
     private static final String TAG = "Lendo";
@@ -24,6 +25,7 @@ public class Lendo extends Activity {
 
     TextView shtitulo = null;
     TextView shcorpo = null;
+    ListView shcorpo2 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,35 +38,51 @@ public class Lendo extends Activity {
         Log.d(TAG, "SAIDA TITULO 1: " + titulo1);
         String corpo1 = extras.getString("MESSAGE");
         Log.d(TAG, "SAIDA MENSAGEM 1: " + corpo1);
+        String corpo2 = extras.getString("MESSAGE2");
+        Log.d(TAG, "SAIDA MENSAGEM 2: " + corpo2);
+
+        String corpo3 = extras.getString("MESSAGE3");
+        String corpo4 = extras.getString("MESSAGE4");
+        String corpo5 = extras.getString("MESSAGE5");
+        String corpo6 = extras.getString("MESSAGE6");
+        String corpo7 = extras.getString("MESSAGE7");
+
 
         //Bundle extras2 = getIntent().getExtras();
         //Toast.makeText(this,"SAIDA TITULO 1: ", Toast.LENGTH_LONG).show();
         // Log.d(TAG,  "SAIDA EXTRAS: " + extras);
 
-        if (extras != null) {
+        //if (extras != null) {
             //Toast.makeText(this,"SAIDA TITULO 2: ", Toast.LENGTH_LONG).show();
 
             //if (extras.containsKey("TITULO")) { //&& extras.containsKey("MESSAGE")) {
 
             setContentView(R.layout.activity_lendo);
-            String titulo = extras.getString("TITULO");
+           /* String titulo = extras.getString("TITULO");
             Log.d(TAG, "SAIDA TITULO : " + titulo);
             String corpo = extras.getString("MESSAGE");
-            Log.d(TAG, "SAIDA MENSAGEM : " + corpo);
+            Log.d(TAG, "SAIDA MENSAGEM : " + corpo);*/
 
             shtitulo = (TextView) findViewById(R.id.titleid);
             shcorpo = (TextView) findViewById(R.id.bodyid);
+        // shcorpo2 = (TextView) findViewById(R.id.body2id);
+        shcorpo2 = (ListView) findViewById(R.id.listid);
+        String[] values = new String[]{"Severidades e Problemas", "Não classificado: " + corpo2, "Informação: " + corpo3, "Atenção: " + corpo4, "Média: " + corpo5, "Alta: " + corpo6, "Desastre: " + corpo7};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
+        shcorpo2.setAdapter(adapter);
 
-            shtitulo.setText(titulo);
-            shcorpo.setText(corpo);
+        shtitulo.setText(titulo1);
+        shcorpo.setText(corpo1);
+        //    shcorpo2.setText(corpo2);
 
-            Log.d(TAG, "SAIDA TITULO 2: " + titulo);
-            Log.d(TAG, "SAIDA CORPO 2: " + corpo);
+        Log.d(TAG, "SAIDA TITULO 2: " + titulo1);
+        Log.d(TAG, "SAIDA CORPO 2: " + corpo1);
+        Log.d(TAG, "SAIDA CORPO 3: " + corpo2);
 
             //Toast.makeText(this,"SAIDA TITULO 3: ", Toast.LENGTH_LONG).show();
             //}
 
-        }
+        //}
 
 
     }

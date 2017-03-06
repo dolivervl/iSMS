@@ -9,32 +9,44 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.iSMS.android.Lendo">
+    tools:context="com.iSMS.android.Lendo"
+    android:background="@color/blue_grey_500">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/firebase_lockup_400" />
+        android:src="@drawable/firebase_lockup_400"
+        app:srcCompat="@drawable/firebase_lockup_400"
+        android:id="@+id/imagemid" />
 
     <TextView
         android:text="Título aqui"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bodyid"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="45dp"
-        android:id="@+id/titleid" />
+        android:padding="8dip"
+        android:id="@+id/titleid"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/imagemid"
+        android:layout_marginBottom="10dp" />
+
 
     <TextView
         android:text="Mensagem aqui"
-        android:layout_width="wrap_content"
+        android:padding="8dip"
+        android:layout_below="@+id/titleid"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="220dp"
         android:id="@+id/bodyid" />
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/listid" />
 
 
 </RelativeLayout>
